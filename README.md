@@ -4,12 +4,12 @@ A Python application to fetch and manage products from your Shopify store using 
 
 ## Features
 
-- 🛍️ Fetch products from your Shopify store
-- 🔍 Search products by title
-- 📊 Display products in a formatted table
-- 📁 Export products to JSON file
-- 🔄 Handle pagination for large product catalogs
-- 🔒 Secure credential management with environment variables
+- Fetch products from your Shopify store
+- Search products by title
+- Display products in a formatted table
+- Export products to JSON file
+- Handle pagination for large product catalogs
+- Secure credential management with environment variables
 
 ## Setup
 
