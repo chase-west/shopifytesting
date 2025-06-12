@@ -216,7 +216,7 @@ def export_to_json(products: List[Product], filename: str = "shopify_products.js
 
 def main():
     """Main application function"""
-    print("🛍️  Shopify Products Fetcher")
+    print("Shopify Products Fetcher")
     print("=" * 50)
     
     # Get credentials from environment variables or user input
@@ -230,14 +230,14 @@ def main():
         access_token = input("Enter your Shopify access token: ").strip()
     
     if not shop_name or not access_token:
-        print("❌ Shop name and access token are required!")
+        print("Shop name and access token are required!")
         return
     
     # Initialize API client
     api = ShopifyAPI(shop_name, access_token)
     
     while True:
-        print("\n📋 Options:")
+        print("\nOptions:")
         print("1. Get first 50 products")
         print("2. Get all products")
         print("3. Search products")
@@ -247,26 +247,26 @@ def main():
         choice = input("\nSelect an option (1-5): ").strip()
         
         if choice == "1":
-            print("\n⏳ Fetching first 50 products...")
+            print("\nFetching first 50 products...")
             products = api.get_products(limit=50)
             display_products(products)
             
         elif choice == "2":
-            print("\n⏳ Fetching all products (this may take a while)...")
+            print("\nFetching all products (this may take a while)...")
             products = api.get_all_products()
             display_products(products)
             
         elif choice == "3":
             query = input("Enter search term: ").strip()
             if query:
-                print(f"\n⏳ Searching for products matching '{query}'...")
+                print(f"\nSearching for products matching '{query}'...")
                 products = api.search_products(query)
                 display_products(products)
             else:
-                print("❌ Please enter a search term!")
+                print("Please enter a search term!")
                 
         elif choice == "4":
-            print("\n⏳ Fetching all products for export...")
+            print("\nFetching all products for export...")
             products = api.get_all_products()
             if products:
                 filename = input("Enter filename (default: shopify_products.json): ").strip()
@@ -274,14 +274,14 @@ def main():
                     filename = "shopify_products.json"
                 export_to_json(products, filename)
             else:
-                print("❌ No products to export!")
+                print("No products to export!")
                 
         elif choice == "5":
-            print("\n👋 Goodbye!")
+            print("\nGoodbye!")
             break
             
         else:
-            print("❌ Invalid option! Please select 1-5.")
+            print("Invalid option! Please select 1-5.")
 
 if __name__ == "__main__":
     main()
